@@ -4,6 +4,7 @@ get '/' do
 end
 
 get '/music' do
+  @music = Song.all
   erb :'music/index'
 end
 
