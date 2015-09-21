@@ -1,6 +1,9 @@
+<h1>All Songs</h1>
+<hr/>
+
 <% @music.each do |song| %>
   <div class="music">
-    <h3><%= song.song_title %> <small>(by: <%= song.author %>)</small></h3>
+    <h3><a href="/music/<%= song.id %>"><%= song.song_title %></a> <small>(by: <%= song.author %>)</small></h3>
     <p>
       <%= song.url %>
     </p>
