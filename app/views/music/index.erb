@@ -5,7 +5,7 @@
   <div class="music">
     <h3><a href="/music/<%= song.id %>"><%= song.song_title %></a> <small>(by: <%= song.author %>)</small></h3>
     <p>
-      <%= song.url %>
+      <a href="<%= song.url %>"><%= song.url %></a>
     </p>
   </div>
 <% end %>
