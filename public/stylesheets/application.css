@@ -1,5 +1,14 @@
 .music {
-<div class="container">
-  <h1><a href="#">Mango Jukebox</a></h1>
-</div>
+
+}
+
+nav {
+  
+}
+
+.error {
+  border: 1px solid red;
+  background: pink;
+  font-weight: bold;
+  color: red;
 }
