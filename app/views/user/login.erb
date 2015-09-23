@@ -1,11 +1,12 @@
 <h1>Mango Jukebox</h1>
-
-<% if @error %>
-  <div class="error"><%= @error %></div>
-<% end %>
-<form method="POST" action="/login">
   <div class="container">
-    <div>
+    <% if @error %>
+      <div class="error"><%= @error %></div>
+    <% end %>
+
+<form method="POST" action="/user/login">
+  <!-- this is for the login page only! -->
+  <div>
     <!-- <label for="email">Email: </label> -->
     <input type="text" id="email" name="email" placeholder="Enter your email" required><br>
     </div>

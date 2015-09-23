@@ -17,6 +17,13 @@ nav h2 {
   float: left;
 }
 
+nav h2 p {
+  float: right;
+  margin-right: 5px;
+  font-size: 1em;
+  line-height: 2em;
+}
+
 #user {
   float: right;
   margin-right: 10px;

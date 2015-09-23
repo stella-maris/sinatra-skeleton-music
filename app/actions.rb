@@ -53,11 +53,33 @@ get '/music/:id' do
   erb :'music/show'
 end
 
-get '/login' do
-  erb :login
+get '/user/signup' do
+  erb :'user/signup'
 end
 
-post '/login' do 
+post '/user/signup' do 
+  @user = User.new(
+  email: params[:email],
+  name: params[:name],
+  password: params[:password]
+  )
+
+  if @user.save
+    session[:user_id] = user.id
+    redirect '/music'
+    # redirect music stuff, if user creds are OK
+  else
+    session[:error] = "Your Sign up information is incorrect"
+    redirect '/user/signup'
+    # redirect or reload a fresh login page
+  end
+end
+
+get '/user/login' do
+  erb :'user/login'
+end
+
+post '/user/login' do 
   email = params[:email]
   password = params[:password]
 
@@ -68,12 +90,13 @@ post '/login' do
     redirect '/music'
     # redirect music stuff, if user creds are OK
   else
-    session[:error] = "Your Login information is incorrect"
-    redirect '/login'
+    session[:error] = "Your Log in information is incorrect"
+    redirect '/user/login'
     # redirect or reload a fresh login page
   end
-  # redirect '/'
 end
+
+
 
 get '/logout' do
   session.clear

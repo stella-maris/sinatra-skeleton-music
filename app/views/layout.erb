@@ -28,7 +28,7 @@
       <% if @user %>
         <p>Hello, <%= @user.name %> | <a href="/logout">Log Out</a></p>
       <% else %>
-        <p><a href="/login">Log In</a></p>
+        <p>Members <a href="user/login" class="btn btn-link" role="button">Log In</a> | New? <a href="user/signup" class="btn btn-info" role="button">Sign Up</a></p>
       <% end %>
     </div>
   </nav>
