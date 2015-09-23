@@ -18,6 +18,11 @@ end
 
 # Homepage (Root path)
 get '/' do
+  if session[:counter]
+    session[:counter] += 1
+  else
+    session[:counter] = 0
+  end
   erb :index
 end
 
@@ -58,12 +63,16 @@ post '/login' do
 
   user = User.find_by(email: email, password: password)
 
-  if user
+  if user 
     session[:user_id] = user.id
+    redirect '/music'
+    # redirect music stuff, if user creds are OK
   else
-    session[:error] = "Invalid credentials"
+    session[:error] = "Your Login information is incorrect"
+    redirect '/login'
+    # redirect or reload a fresh login page
   end
-  redirect '/'
+  # redirect '/'
 end
 
 get '/logout' do

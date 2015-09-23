@@ -1,0 +1,14 @@
+<% if @error %>
+  <div class="error"><%= @error %></div>
+<% end %>
+<form method="POST" action="/login">
+  <div>
+    <label for="email">Email: </label>
+    <input type="text" id="email" name="email" placeholder="Enter your email" required><br>
+  </div>
+  <div>
+    <label for="password">Password: </label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+    <input type="submit" value="Login">
+  </div>
+</form>

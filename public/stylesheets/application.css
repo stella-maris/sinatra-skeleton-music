@@ -3,7 +3,14 @@
 }
 
 nav {
-  
+  position: fixed;
+  height: 10%;
+  background-color: FFA500;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color:3A97B5;
+  clear: both;
 }
 
 .error {
