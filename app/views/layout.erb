@@ -26,7 +26,7 @@
     <h2>Mango Jukebox</h2>
     <div id="user">
       <% if @user %>
-        <p><%= @user.name %> | <a href="/logout">Log Out</a></p>
+        <p>Hello, <%= @user.name %> | <a href="/logout">Log Out</a></p>
       <% else %>
         <p><a href="/login">Log In</a></p>
       <% end %>
